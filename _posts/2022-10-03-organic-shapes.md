@@ -1,9 +1,11 @@
 ---
 layout: post
 title:  "Organic Shapes in Email"
-date:   2022-10-03 15:41:23 -0400
-categories: jekyll update
+date:   2022-10-04 21:21:23 -0400
+tags: HTML CSS Outlook NewTech
 ---
+<!-- test -->
+
 ![shapes](../../../../../../assets/images/shapes.png)
 
 I have been working on a new design capability and tool to bring a fresh look and feel to emails that I am ready to share with the world.

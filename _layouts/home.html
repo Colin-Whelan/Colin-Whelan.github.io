@@ -1,0 +1,7 @@
+---
+layout: default
+---
+{% unless site.dash.show_author == false %}
+  {% include author.html %}
+{% endunless %}
+{% include anchor_headings.html html=content beforeHeading=true h_max=2 generateId=true anchorBody="" %}

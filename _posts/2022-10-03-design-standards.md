@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Email Design Standards"
-date:   2022-10-03 15:41:23 -0400
+date:   2022-8-03 15:41:23 -0400
 categories: jekyll update
 ---
 
