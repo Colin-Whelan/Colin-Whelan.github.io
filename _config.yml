@@ -47,6 +47,7 @@ dash:
 
 # Build settings
 theme: jekyll-dash
+remote-theme: LU-SIFE/jekyll-dash-theme
 
 plugins:
  - jekyll-feed
