@@ -2,7 +2,7 @@
 layout: post
 title:  "Yahoo Style Bug"
 date:   2022-10-03 20:41:23 -0400
-tags: HTML CSS Bug
+categories: HTML CSS Bug
 ---
 
 Small post, just learned that Yahoo styles wont work if there preceeded by a CSS comment. Keep an eye out for that. 

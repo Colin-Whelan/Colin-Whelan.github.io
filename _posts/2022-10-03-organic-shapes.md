@@ -2,17 +2,16 @@
 layout: post
 title:  "Organic Shapes in Email"
 date:   2022-10-04 21:21:23 -0400
-tags: HTML CSS Outlook NewTech
+categories: HTML CSS Outlook NewTech
 ---
-<!-- test -->
 
-![shapes](../../../../../../assets/images/shapes.png)
+![shapes](../../../../../../../assets/images/shapes.png)
 
 I have been working on a new design capability and tool to bring a fresh look and feel to emails that I am ready to share with the world.
 
 Over the past decade there has been a bigger push toward curved designs, which have mostly been locked away from email due to lack of support. I've found a solution to the problem, and it's so simple I'm surprised I haven't seen it earlier. 
 
-![example](../../../../../../assets/images/organicShape-example.jpg)
+![example](../../../../../../../assets/images/organicShape-example.jpg)
 
 # Where is this supported?
 

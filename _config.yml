@@ -9,9 +9,9 @@ show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 5
 
-tag_permalink_style: pretty
-tag_page_layout: tag_page
-tag_page_dir: tag
+# tag_permalink_style: pretty
+# tag_page_layout: tag_page
+# tag_page_dir: tag
 
 # jekyll-dash date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
