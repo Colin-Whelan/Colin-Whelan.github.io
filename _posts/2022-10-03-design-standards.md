@@ -2,7 +2,7 @@
 layout: post
 title:  "Email Design Standards"
 date:   2022-8-03 15:41:23 -0400
-categories: jekyll update
+categories: Standards
 ---
 
 This will be the living documentation of my email design standards and decisions behind them.

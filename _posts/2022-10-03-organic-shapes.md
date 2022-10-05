@@ -30,9 +30,9 @@ In addition to creating tons of new shapes, several shapes can be layered on top
 # How does it work?
 
 Using [the border technique from the 9elements blog](https://9elements.com/blog/css-border-radius/), shapes can be easily made for non-outlook clients. 
-To add support for Outlook I needed to delve into [the VML specs](https://www.w3.org/TR/NOTE-VML) a bit. There is a shape command that works very similar to she full 8 point control described in the blog post - 'ellipticalqaudrantx' and 'ellipticalquadranty'. The commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this, as we as the simple line 'l' command to make straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
+To add support for Outlook I needed to delve into [the VML specs](https://www.w3.org/TR/NOTE-VML) a bit. There is a shape command that works very similar to the full 8 point control described in the blog post - 'ellipticalqaudrantx' and 'ellipticalquadranty'. The commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this, as we as the simple line 'l' command to make straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
 
-For shape layering, I learned about the `<v:group>` from the spec that lets shapes be grouped together which allows for easy layering of several shapes. Be sure to select the grouping option when generating this code.
+For shape layering, I learned about the `<v:group>` from the spec that lets shapes be grouped together which allows for fairly easy layering of several shapes. Be sure to select the grouping option when generating this code.
 
 ---
 
