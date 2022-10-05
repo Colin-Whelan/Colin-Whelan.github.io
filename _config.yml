@@ -46,7 +46,7 @@ dash:
   #avatar_path: /assets/avatar.png
 
 # Build settings
-theme: jekyll-dash
+# theme: jekyll-dash
 remote-theme: LU-SIFE/jekyll-dash-theme
 
 plugins:
