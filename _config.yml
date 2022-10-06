@@ -5,7 +5,8 @@ github_username:  Colin-Whelan
 description: > # this means to ignore newlines until "show_exerpts:"
   A blog for keeping track of and showing off updates in the email development landscape. 
   Tools I develop and tips I learn will be shared here as well.
-show_excerpts: false # set to true to show excerpts on the homepage
+# show_excerpts: false # set to true to show excerpts on the homepage
+# using {{ post.content | markdownify | strip_html | truncatewords: 50 }} in index.html instead
 
 paginate: 5
 
