@@ -19,8 +19,6 @@ Over the past decade there has been a bigger push toward curved designs, which h
 
 With a whole new group of shapes to choose from, there are plenty more designs possible with email.
 
-
-
 ## Borders
 
 ![](../../../../../../../assets/images/organicShape-borders.jpg)
@@ -29,22 +27,24 @@ Shapes can also be a border on their own for more possibilities.
 
 # Where is this supported?
 
-This techniques works everywhere except AOL/Yahoo mail where it is square. Outlook support requires some novel VML code. I've developed a tool to automatically create the VML as doing it manually is very time consuming. [Check out my VML Pather tool for various VML generation needs.](https://vml-pather.glitch.me/)
+This techniques works everywhere except AOL/Yahoo mail where it is square instead. Outlook support requires some novel VML code. I've developed a tool to automatically create the VML as doing it manually is very time consuming and confusing. [Check out my VML Pather tool for various VML generation needs.](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}
+
+For mobile and darkmode, classes can be used to modify the shapes and colors as needed.
 
 # Shape Layering
 
 ![example of shape layering](../../../../../../../assets/images/organicShape-example.jpg)
 
-In addition to creating tons of new shapes, several shapes can be layered on top one another for even more effects. With this technique it's possible to achieve the hand-drawn style seen above.
+In addition to creating tons of new shapes, several shapes can be layered on top one another for even more effects. 
+
+I especially like the somewhat hand-drawn style seen above.
 
 # How Does It Work?
 
-Use [the border technique and tool from the 9elements blog](https://9elements.com/blog/css-border-radius/) to easily design shapes for non-Outlook clients. 
-To add support for Outlook, [special VML code is needed](https://www.w3.org/TR/NOTE-VML). There is a shape command that works very similar to the 8 point full control described in the blog post - 'ellipticalqaudrantx' and 'ellipticalquadranty'. These commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this and the simple line 'l' command to make straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
+Use [the border technique from 9elements](https://9elements.com/blog/css-border-radius/){:target="_blank"}{:rel="noopener noreferrer"} along with [their tool](https://9elements.github.io/fancy-border-radius/full-control.html#10.10.10.10-90.90.90.90-386.386){:target="_blank"}{:rel="noopener noreferrer"} to easily design shapes for non-Outlook clients. 
+To add support for Outlook, special VML code is needed from [the VML Spec](https://www.w3.org/TR/NOTE-VML){:target="_blank"}{:rel="noopener noreferrer"}. There is a shape command that works very similar to the 8 point full control - 'ellipticalqaudrantx' and 'ellipticalquadranty'. These commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this and the simple line 'l' command to draw straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
 
 For shape layering, there is `<v:group>` from the spec that allows for shapes to be grouped together and layerd. Be sure to select the grouping option on the Pather when generating this code.[^1] This changes a couple things about the shape code to enable the grouping option.
-
-[^1]: With shape layering, an arbitrary amount of padding may be needed for Outlook. Use  `mso-padding-bottom-alt:_px;` and test to adjust as needed.
 
 ---
 
@@ -52,7 +52,7 @@ For shape layering, there is `<v:group>` from the spec that allows for shapes to
 
 ### Basic Shapes
 
-Design shapes using the 8 point full control tool from 9elements then copy and paste the values into [my VML pather tool](https://vml-pather.glitch.me/).
+Design shapes using the 8 point full control tool from 9elements then copy and paste the values into [my VML pather tool](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}.
 
 HTML
 
@@ -100,7 +100,7 @@ border-radius: 15% 77% 70% 17% / 71% 39% 48% 18% !important;
 
 ### Advanced Shape Layering[^1]
 
-Like basic shapes, design with the 9elements pages and paste values into [my VML pather tool](https://vml-pather.glitch.me/). Be sure to select the `<v:group>` option. To get this working on the rest of the devices, add the background colors and shape details to classes and asign to nested `<td>`'s as needed. 
+Like basic shapes, design with the 9elements pages and paste values into [my VML pather tool](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}. Be sure to select the `<v:group>` option. To get this working on the rest of the devices, add the background colors and shape details to classes and asign to nested `<td>`'s as needed. 
 
 HTML
 
@@ -185,10 +185,4 @@ mso-border-alt: none !important;
 
 ---
 
-
-
-<!-- Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/ -->
+[^1]: With shape layering, an arbitrary amount of padding may be needed for Outlook. Use  `mso-padding-bottom-alt:_px;` and test to adjust as needed.
