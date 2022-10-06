@@ -5,33 +5,44 @@ date:   2022-10-04 21:21:23 -0400
 categories: HTML CSS Outlook NewTech
 ---
 
-![shapes](../../../../../../../assets/images/shapes.png)
+![](../../../../../../../assets/images/shapes.png)
+
+# Intro to Organic Shapes
 
 I have been working on a new design capability and tool to bring a fresh look and feel to emails that I am ready to share with the world.
 
 Over the past decade there has been a bigger push toward curved designs, which have mostly been locked away from email due to lack of support. I've found a solution to the problem, and it's so simple I'm surprised I haven't seen it earlier. 
 
-![example](../../../../../../../assets/images/organicShape-example.jpg)
+## Basic Shapes
+
+![](../../../../../../../assets/images/organicShape-basic.jpg)
+
+With a whole new group of shapes to choose from, there are plenty more designs possible with email.
+
+
+
+## Borders
+
+![](../../../../../../../assets/images/organicShape-borders.jpg)
+
+Shapes can also be a border on their own for more possibilities.
 
 # Where is this supported?
 
 This techniques works everywhere except AOL/Yahoo mail where it is square. Outlook support requires some novel VML code. I've developed a tool to automatically create the VML as doing it manually is very time consuming. [Check out my VML Pather tool for various VML generation needs.](https://vml-pather.glitch.me/)
 
-## Borders
-
-Shapes can also be a border on their own for more customization.
-
 # Shape Layering
+
+![example of shape layering](../../../../../../../assets/images/organicShape-example.jpg)
 
 In addition to creating tons of new shapes, several shapes can be layered on top one another for even more effects. With this technique it's possible to achieve the hand-drawn style seen above.
 
-# How does it work?
+# How Does It Work?
 
-Using [the border technique from the 9elements blog](https://9elements.com/blog/css-border-radius/), shapes can be easily made for non-outlook clients. 
-To add support for Outlook I needed to delve into [the VML specs](https://www.w3.org/TR/NOTE-VML) a bit. There is a shape command that works very similar to the full 8 point control described in the blog post - 'ellipticalqaudrantx' and 'ellipticalquadranty'. The commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this, as we as the simple line 'l' command to make straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
+Use [the border technique and tool from the 9elements blog](https://9elements.com/blog/css-border-radius/) to easily design shapes for non-Outlook clients. 
+To add support for Outlook, [special VML code is needed](https://www.w3.org/TR/NOTE-VML). There is a shape command that works very similar to the 8 point full control described in the blog post - 'ellipticalqaudrantx' and 'ellipticalquadranty'. These commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this and the simple line 'l' command to make straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
 
-For shape layering, there is `<v:group>` from the spec that allows for shapes to be grouped together and layerd. Be sure to select the grouping option on the Pather when generating this code.[^1]
-
+For shape layering, there is `<v:group>` from the spec that allows for shapes to be grouped together and layerd. Be sure to select the grouping option on the Pather when generating this code.[^1] This changes a couple things about the shape code to enable the grouping option.
 
 [^1]: With shape layering, an arbitrary amount of padding may be needed for Outlook. Use  `mso-padding-bottom-alt:_px;` and test to adjust as needed.
 
@@ -39,12 +50,66 @@ For shape layering, there is `<v:group>` from the spec that allows for shapes to
 
 ## Code
 
-Advanced shape layering[^1]
+### Basic Shapes
+
+Design shapes using the 8 point full control tool from 9elements then copy and paste the values into [my VML pather tool](https://vml-pather.glitch.me/).
+
+HTML
+
+[expand]
+
+```html
+<table border="0" cellpadding="0" cellspacing="0" style="" role="presentation">
+  <tr>
+    <td style="" class="fullshape1 bg_D2ECEB">
+      <table border="0" cellpadding="0" cellspacing="0" width="560"class="w100" style="" role="presentation">
+        <tr>
+          <!--[if mso]>
+          <v:shape style='left: 0; width: 560; height: 200; flip:y;' fill="true" fillcolor="#F4AB66" stroke="false" coordorigin="0 0" coordsize="560 200">
+          <v:path v="m 0,36 qy 95,0 l 168,0 qx 560,96 l 560,122 qy 129,200 l 84,200 qx 0,58 x"/>
+          <![endif]-->
+          <td valign="top" style="">
+            Main Content Here
+          </td>
+          <!--[if mso]>
+          </v:shape>
+          <![endif]-->
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+```
+
+[/expand]
+
+CSS
+
+[expand]
+
+```css
+.fullshape1 {
+border-radius: 15% 77% 70% 17% / 71% 39% 48% 18% !important;
+}
+.bg_D2ECEB { background-color: #D2ECEB; }
+```
+
+[/expand]
+
+---
+
+### Advanced Shape Layering[^1]
+
+Like basic shapes, design with the 9elements pages and paste values into [my VML pather tool](https://vml-pather.glitch.me/). Be sure to select the `<v:group>` option. To get this working on the rest of the devices, add the background colors and shape details to classes and asign to nested `<td>`'s as needed. 
+
+HTML
+
+[expand]
 
 ```html
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" role="presentation">
   <tr>
-    <td align="center" style="mso-padding-bottom-alt:120px;" class="">
+    <td align="center" style="mso-padding-bottom-alt:130px;" class="">
       <table border="0" cellpadding="0" cellspacing="0" width="560" class="w100" style="" role="presentation">
         <tr>
           <!--[if !mso]-->
@@ -94,6 +159,12 @@ Advanced shape layering[^1]
 </table>
 ```
 
+[/expand]
+
+CSS
+
+[expand]
+
 ```css
 .fullshape1 {
 border-radius: 15% 77% 70% 17% / 71% 39% 48% 18% !important;
@@ -109,6 +180,11 @@ mso-border-alt: none !important;
 .bg_f4ab66 { background-color: #f4ab66; }
 .bg_f4cc66 { background-color: #f4cc66; }
 ```
+
+[/expand]
+
+---
+
 
 
 <!-- Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
