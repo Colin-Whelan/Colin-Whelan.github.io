@@ -32,13 +32,16 @@ In addition to creating tons of new shapes, several shapes can be layered on top
 Using [the border technique from the 9elements blog](https://9elements.com/blog/css-border-radius/), shapes can be easily made for non-outlook clients. 
 To add support for Outlook I needed to delve into [the VML specs](https://www.w3.org/TR/NOTE-VML) a bit. There is a shape command that works very similar to the full 8 point control described in the blog post - 'ellipticalqaudrantx' and 'ellipticalquadranty'. The commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this, as we as the simple line 'l' command to make straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
 
-For shape layering, I learned about the `<v:group>` from the spec that lets shapes be grouped together which allows for fairly easy layering of several shapes. Be sure to select the grouping option when generating this code.
+For shape layering, there is `<v:group>` from the spec that allows for shapes to be grouped together and layerd. Be sure to select the grouping option on the Pather when generating this code.[^1]
+
+
+[^1]: With shape layering, an arbitrary amount of padding may be needed for Outlook. Use  `mso-padding-bottom-alt:_px;` and test to adjust as needed.
 
 ---
 
 ## Code
 
-Advanced shape layering
+Advanced shape layering[^1]
 
 ```html
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" role="presentation">
@@ -68,7 +71,7 @@ Advanced shape layering
                             <v:shape style='left: 0; width: 1000; height: 1000; flip:y;' strokeweight="1" strokecolor="#000000" fill="false" coordorigin="0 0" coordsize="560 200">
                             <v:path v="m 0,50 qy 106,0 l 241,0 qx 560,96 l 560,120 qy 118,200 l 90,200 qx 0,58 x"/>
                             <![endif]-->
-                            <td valign="top" style="height: 200px; width: 640px;">
+                            <td>
                               Main Content Here
                             </td>
                             <!--[if mso]>
