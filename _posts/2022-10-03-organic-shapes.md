@@ -15,9 +15,7 @@ Over the past decade there has been a bigger push toward curved designs, which h
 
 # Where is this supported?
 
-This techniques works everywhere except AOL/Yahoo mail, and Outlook does require VML. I've developed a tool to automatically create the VML as doing it manually is very time consuming. [Check out my VML Pather tool for various VML generation needs.](https://vml-pather.glitch.me/)
-
-Using classes, different mobile or darkmode designs are easy as ever, no considerations needed.
+This techniques works everywhere except AOL/Yahoo mail where it is square. Outlook support requires some novel VML code. I've developed a tool to automatically create the VML as doing it manually is very time consuming. [Check out my VML Pather tool for various VML generation needs.](https://vml-pather.glitch.me/)
 
 ## Borders
 
