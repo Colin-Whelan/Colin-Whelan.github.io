@@ -13,17 +13,21 @@ I have been working on a new design capability and tool to bring a fresh look an
 
 For a long time there has been a push toward curved designs on the web, which have mostly been locked away from email due to lack of support and ease of use. I've found a solution to the problem, and it's so simple I'm honestly surprised it hasn't been explored more. 
 
+Using the full 8 points available in the `border-radius:;` property, [outlined in 9elements' blog post](https://9elements.com/blog/css-border-radius/#eight-values-separated-by-a-slash-this-is-where-it-gets-interesting-){:target="_blank"}{:rel="noopener noreferrer"}, a diverse range of shapes can be developed in code for more mobile and darkmode control, and better rendering with images disabled. 
+
+Oddly enough, most Creative programs like Photoshop and Sketch are limited to only 4 point control. So in weird twist, email has more support than major creative programs. 🙃
+
 ## Basic Shapes
 
 ![](../../../../../../../assets/images/organicShape-basic.jpg)
 
-With a whole new group of shapes to choose from, there are plenty more email designs possible.
+With a whole new set of shapes to work with, there are plenty more email designs possible.
 
 ## Borders
 
 ![](../../../../../../../assets/images/organicShape-borders.jpg)
 
-Shapes can also be a border on their own for more possibilities.
+Shapes can also be a border on their own for more possibilities such as neon themed email.
 
 # Shape Layering
 
@@ -65,7 +69,7 @@ To add support for Outlook, special VML code is needed from [the VML Spec](https
 
 There is a shape command that works very similar to the 8 point full control - 'ellipticalqaudrantx' and 'ellipticalquadranty'. These commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this and the simple line 'l' command to draw straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
 
-For shape layering, there is `<v:group>` from the spec that allows for shapes to be grouped together and layerd. Be sure to select the grouping option on the Pather when generating this code.[^1] This changes a couple things about the shape code to enable the grouping option.
+For shape layering, there is `<v:group>` from the spec that allows for shapes to be grouped together and layered. Be sure to select the grouping option on the Pather tool when generating this code.[^1] This changes a couple things about the shape code to enable the grouping option.
 
 With Organic Shapes, content is layered on top of these shapes rather than the shapes clipping the content. While using the shapes as clipping paths can be supported in non-Outlook clients, I have not been able to re-create this for Outlook.
 
@@ -123,7 +127,7 @@ border-radius: 15% 77% 70% 17% / 71% 39% 48% 18% !important;
 
 ## Advanced Shape Layering[^1]
 
-Like basic shapes, design with the 9elements pages and paste values into [my VML pather tool](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}. Be sure to select the `<v:group>` option. To get this working on the rest of the devices, add the background colors and shape details to classes and asign to nested `<td>`'s as needed. 
+Like basic shapes, design with the 9elements pages and paste values into [my VML pather tool](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}. Be sure to select the `<v:group>` option. While this allows for layering, it doesn't actually generate the additional shapes or nested code. See the example below for reference.
 
 HTML
 
