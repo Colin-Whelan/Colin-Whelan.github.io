@@ -27,9 +27,22 @@ Shapes can also be a border on their own for more possibilities.
 
 # Where is this supported?
 
-This techniques works everywhere except AOL/Yahoo mail where it is square instead. Outlook support requires some novel VML code. I've developed a tool to automatically create the VML as doing it manually is very time consuming and confusing. [Check out my VML Pather tool for various VML generation needs.](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}
+There is full support everywhere except AOL and Yahoo where the '/' in the border radius is not supported - showing a square shape instead. A simpler fallback can be added really easily thanks to a bug in AOL/Yahoo where a it will ignore CSS in classes if there is a CSS comment direcly before it. Using this bug, the full shape can be hidden while leaving behind a shape that only uses 4 values.
 
-For mobile and darkmode, classes can be used to modify the shapes and colors as needed.
+```html
+<!--[if !mso]-->
+<style type="text/css">
+  .bg_8A39FF { background-color:#8A39FF; }
+  .shape { border-radius: 45% 45% 40% 55%; }
+  /*yahoo ignores this next class*/
+  .shape { border-radius: 10% 20% 30% 20% / 45% 45% 40% 55%; }
+</style>
+<!--<![endif]-->
+```
+
+Outlook support requires some novel VML code. I've developed a tool to automatically create the VML as doing it manually is very time consuming and confusing. [Check out my VML Pather tool for various VML generation needs.](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}
+
+For mobile and darkmode, other classes can be used like normal to modify the shapes and colors as needed.
 
 # Shape Layering
 
@@ -37,7 +50,7 @@ For mobile and darkmode, classes can be used to modify the shapes and colors as 
 
 In addition to creating tons of new shapes, several shapes can be layered on top one another for even more effects. 
 
-I especially like the somewhat hand-drawn style seen above.
+I especially like the somewhat hand-drawn style seen above. 
 
 # How Does It Work?
 
@@ -45,6 +58,8 @@ Use [the border technique from 9elements](https://9elements.com/blog/css-border-
 To add support for Outlook, special VML code is needed from [the VML Spec](https://www.w3.org/TR/NOTE-VML){:target="_blank"}{:rel="noopener noreferrer"}. There is a shape command that works very similar to the 8 point full control - 'ellipticalqaudrantx' and 'ellipticalquadranty'. These commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this and the simple line 'l' command to draw straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
 
 For shape layering, there is `<v:group>` from the spec that allows for shapes to be grouped together and layerd. Be sure to select the grouping option on the Pather when generating this code.[^1] This changes a couple things about the shape code to enable the grouping option.
+
+One thing to note for this new technique is that content is layered on top of these shapes. While using the shapes as clipping paths can be supported in non-Outlook clients, I have not been able to re-create this for Outlook.
 
 ---
 
