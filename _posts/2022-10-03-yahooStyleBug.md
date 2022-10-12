@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Yahoo Style Bug"
+title:  "AOL/Yahoo Style Bug"
 date:   2022-10-03 20:41:23 -0400
 categories: HTML CSS Bug
 ---
 
-Small post, just learned that Yahoo styles wont work if there preceeded by a CSS comment. Keep an eye out for that. 
+Small post, just learned that AOL/Yahoo styles wont work if there preceeded by a CSS comment. Keep an eye out for that. 
 
 
 ## Example
@@ -19,12 +19,24 @@ Small post, just learned that Yahoo styles wont work if there preceeded by a CSS
 
 ---
 
-There are a few ways to prevent this issue:
-1. Remove the CSS comment
-2. Make the CSS comment an HTML comment outside the `<style>` tag
-3. Add an empty class beneath it like this:
+This can be used as a way to create target for AOL/Yahoo if needed.
 
-```css
+```html
+<style type="text/css">
+  .class { color: red; }
+  /*yahoo ignores this next class, but works for all others*/
+  .class { color: blue; }
+</style>
+```
+
+---
+
+There are a few ways to prevent this issue:
+- Remove the CSS comment
+- Make the CSS comment an HTML comment outside the `<style>` tag
+- Add an empty style beneath it like this:
+
+```html
 <style type="text/css">
 /*Comment Here*/
 .{}
