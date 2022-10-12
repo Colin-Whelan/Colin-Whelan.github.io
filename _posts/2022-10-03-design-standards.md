@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Email Design Standards"
-date:   2022-8-03 15:41:23 -0400
+title:  "WIP: Email Design Standards"
+date:   2022-10-03 15:41:23 -0400
 categories: Standards
 ---
 
@@ -30,7 +30,18 @@ My CSS is very standard, using an atomic CSS approach. This keeps the CSS consis
 
 At the same time, the CSS is very human readable, mimicking the Emmet CSS shorthand standards for the most part.
 
+
+[expand]
+
 ```css
+/*WIDTHS*/
+.w100 { width: 100% !important;}
+.w75 { width: 75% !important;}
+.w60 { width: 60% !important;}
+.w50 { width: 50% !important;}
+.w40 { width: 40% !important;}
+.w33 { width: 33% !important;}
+.w25 { width: 25% !important;}
 /*PADDING*/
 .p0 { padding: 0px !important; }
 .p5 { padding: 5px !important; }
@@ -67,7 +78,41 @@ At the same time, the CSS is very human readable, mimicking the Emmet CSS shorth
 .pl20 { padding-left: 20px !important; }
 .pl25 { padding-left: 25px !important; }
 .pl30 { padding-left: 30px !important; }
+/*STACKING*/
+.expand { width: 100% !important; display: block !important; }
+.expand2 { display: block !important; }
+/*IMAGE SIZING*/
+.resize { max-width: 100% !important; height: auto !important; width: 100% !important; }
+.resize2 { width: 100% !important; height: auto !important; }
+.resize3 { height: auto !important; }
+/*HIDE-SHOW*/
+.hide { display: none !important; }
+.show { display: inline !important; overflow: visible !important; width: 100% !important; height: auto !important; max-height: inherit !important; line-height: 120% !important; }    
 ```
 
-The 'Padding' styles alone account for over 90% of mobile classes needed
+[/expand]
+
+The 'Width' and 'Padding' styles alone account for over 90% of mobile classes needed
+
+## Text
+
+For simplicity and to make it easier to read, `<p></p>` tags are preferred. The built in margins are usually fine as is, but can be easily customized in CSS as well.
+
+## Images
+
+All images should be exported at at least 2X resolution for best performance on mobile phones and high resolution monitors.
+
+### Sizes
+
+It's best to keep assets small and light so they are faster to load and cheaper to host. 
+
+**Soft limit**: 1MB - At this size some slow connections may take a second or 2 to load, depending on device and settings.
+
+**Hard limit**: 2MB - Any larger than this and there is real risk of assets not loading before recipient exits the message. 
+
+### Formats
+
+Icons, illustrations, and logos are PNG24 which delivers optimal transparency for crisp edges. 
+
+Photographs are JPGs saved at 70-100% quality, depending on the need to reduce filesize.
 
