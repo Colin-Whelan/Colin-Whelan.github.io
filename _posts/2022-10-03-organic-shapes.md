@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Organic Shapes in Email"
-date:   2022-10-04 21:21:23 -0400
+date:   2022-10-11 21:21:23 -0400
 categories: HTML CSS Outlook NewTech
 ---
 
