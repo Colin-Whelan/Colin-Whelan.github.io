@@ -17,7 +17,7 @@ Over the past decade there has been a bigger push toward curved designs, which h
 
 ![](../../../../../../../assets/images/organicShape-basic.jpg)
 
-With a whole new group of shapes to choose from, there are plenty more designs possible with email.
+With a whole new group of shapes to choose from, there are plenty more email designs possible.
 
 ## Borders
 
@@ -25,9 +25,19 @@ With a whole new group of shapes to choose from, there are plenty more designs p
 
 Shapes can also be a border on their own for more possibilities.
 
+# Shape Layering
+
+![example of shape layering](../../../../../../../assets/images/organicShape-example.jpg)
+
+In addition to creating tons of new shapes, several shapes can be layered on top one another for even more effects. 
+
+I especially like the somewhat hand-drawn style seen above. 
+
 # Where is this supported?
 
-There is full support everywhere except AOL and Yahoo where the '/' in the border radius is not supported - showing a square shape instead. A simpler fallback can be added really easily thanks to a bug in AOL/Yahoo where a it will ignore CSS in classes if there is a CSS comment direcly before it. Using this bug, the full shape can be hidden while leaving behind a shape that only uses 4 values.
+## Webmails and Mobile
+
+There is full support everywhere except AOL and Yahoo where the '/' in the border radius is not supported - showing a square shape instead. A simpler fallback shape can be added really easily thanks to a bug in AOL/Yahoo where it will ignore CSS in a class if there is a CSS comment direcly before it. Using this bug, the full shape can be ignored on AOL/Yahoo while leaving behind a shape that only uses 4 values.
 
 ```html
 <!--[if !mso]-->
@@ -40,32 +50,30 @@ There is full support everywhere except AOL and Yahoo where the '/' in the borde
 <!--<![endif]-->
 ```
 
-Outlook support requires some novel VML code. I've developed a tool to automatically create the VML as doing it manually is very time consuming and confusing. [Check out my VML Pather tool for various VML generation needs.](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}
-
 For mobile and darkmode, other classes can be used like normal to modify the shapes and colors as needed.
 
-# Shape Layering
+## Outlook Support!
 
-![example of shape layering](../../../../../../../assets/images/organicShape-example.jpg)
+Surprisingly, Outlook can be supported too, with the use of some novel VML code...
 
-In addition to creating tons of new shapes, several shapes can be layered on top one another for even more effects. 
-
-I especially like the somewhat hand-drawn style seen above. 
+I've developed a tool to automatically create the VML as doing it manually is very time consuming and confusing. [Check out my VML Pather tool for various VML generation needs.](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}
 
 # How Does It Work?
 
-Use [the border technique from 9elements](https://9elements.com/blog/css-border-radius/){:target="_blank"}{:rel="noopener noreferrer"} along with [their tool](https://9elements.github.io/fancy-border-radius/full-control.html#10.10.10.10-90.90.90.90-386.386){:target="_blank"}{:rel="noopener noreferrer"} to easily design shapes for non-Outlook clients. 
-To add support for Outlook, special VML code is needed from [the VML Spec](https://www.w3.org/TR/NOTE-VML){:target="_blank"}{:rel="noopener noreferrer"}. There is a shape command that works very similar to the 8 point full control - 'ellipticalqaudrantx' and 'ellipticalquadranty'. These commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this and the simple line 'l' command to draw straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
+[The border technique from 9elements](https://9elements.com/blog/css-border-radius/){:target="_blank"}{:rel="noopener noreferrer"} along with [their tool](https://9elements.github.io/fancy-border-radius/full-control.html#10.10.10.10-90.90.90.90-386.386){:target="_blank"}{:rel="noopener noreferrer"} is used to easily design shapes for non-Outlook clients. 
+To add support for Outlook, special VML code is needed from [the VML Spec](https://www.w3.org/TR/NOTE-VML){:target="_blank"}{:rel="noopener noreferrer"}. 
+
+There is a shape command that works very similar to the 8 point full control - 'ellipticalqaudrantx' and 'ellipticalquadranty'. These commands are used to draw curved corners which start and end on vertical and horizontal lines. Using this and the simple line 'l' command to draw straight lines, it is possible to define each of the 8 corner points, but with pixels instead of percentages.
 
 For shape layering, there is `<v:group>` from the spec that allows for shapes to be grouped together and layerd. Be sure to select the grouping option on the Pather when generating this code.[^1] This changes a couple things about the shape code to enable the grouping option.
 
-One thing to note for this new technique is that content is layered on top of these shapes. While using the shapes as clipping paths can be supported in non-Outlook clients, I have not been able to re-create this for Outlook.
+With Organic Shapes, content is layered on top of these shapes rather than the shapes clipping the content. While using the shapes as clipping paths can be supported in non-Outlook clients, I have not been able to re-create this for Outlook.
 
 ---
 
-## Code
+# Code
 
-### Basic Shapes
+## Basic Shapes
 
 Design shapes using the 8 point full control tool from 9elements then copy and paste the values into [my VML pather tool](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}.
 
@@ -113,7 +121,7 @@ border-radius: 15% 77% 70% 17% / 71% 39% 48% 18% !important;
 
 ---
 
-### Advanced Shape Layering[^1]
+## Advanced Shape Layering[^1]
 
 Like basic shapes, design with the 9elements pages and paste values into [my VML pather tool](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}. Be sure to select the `<v:group>` option. To get this working on the rest of the devices, add the background colors and shape details to classes and asign to nested `<td>`'s as needed. 
 
