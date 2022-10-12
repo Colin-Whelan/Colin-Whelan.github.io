@@ -11,7 +11,7 @@ categories: HTML CSS Outlook NewTech
 
 I have been working on a new design capability and tool to bring a fresh look and feel to emails that I am really excited to share with the community.
 
-For a long time there has been a push toward curved designs on the web, which have mostly been locked away from email due to lack of support and ease of use. I've found a solution to the problem, and it's so simple I'm honestly surprised it hasn't been explorer more. 
+For a long time there has been a push toward curved designs on the web, which have mostly been locked away from email due to lack of support and ease of use. I've found a solution to the problem, and it's so simple I'm honestly surprised it hasn't been explored more. 
 
 ## Basic Shapes
 
