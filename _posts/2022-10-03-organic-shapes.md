@@ -9,9 +9,9 @@ categories: HTML CSS Outlook NewTech
 
 # Intro to Organic Shapes
 
-I have been working on a new design capability and tool to bring a fresh look and feel to emails that I am ready to share with the world.
+I have been working on a new design capability and tool to bring a fresh look and feel to emails that I am really excited to share with the community.
 
-Over the past decade there has been a bigger push toward curved designs, which have mostly been locked away from email due to lack of support. I've found a solution to the problem, and it's so simple I'm surprised I haven't seen it earlier. 
+For a long time there has been a push toward curved designs on the web, which have mostly been locked away from email due to lack of support and ease of use. I've found a solution to the problem, and it's so simple I'm honestly surprised it hasn't been explorer more. 
 
 ## Basic Shapes
 
