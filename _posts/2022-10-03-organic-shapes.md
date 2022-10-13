@@ -39,6 +39,8 @@ I especially like the somewhat hand-drawn style seen above.
 
 # Where is this supported?
 
+**TL:DR** - Everywhere, with some [special code for Outlook](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}.
+
 ## Webmails
 
 There is full support in all webmails and mobile. 
@@ -77,7 +79,7 @@ There is full support for mobile and darkmode. Classes are used like normal to m
 
 Surprisingly, Outlook is supported too - with the use of some novel VML code...
 
-VML is the Outlook equivalent of SVG where shapes are drawn with paths using coordinates. I've developed a tool to automatically create the VML as doing it manually is very time consuming and confusing. [Check out my VML Pather tool the generate these Organic Shapes.](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}
+VML is the Outlook equivalent of SVG where shapes are drawn with paths. I've developed a tool to automatically create the VML as doing it manually is very time consuming and confusing. [Check out my VML Pather tool the generate these Organic Shapes.](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}
 
 # How Does It Work?
 
