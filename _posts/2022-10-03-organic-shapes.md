@@ -44,7 +44,7 @@ I especially like the somewhat hand-drawn style seen above.
 ## Webmails
 
 There is full support in all webmails and mobile. 
-AOL and Yahoo don't support the '/' in the border-radius, so the style must be split into individual parts. Thanks to [Mark Robbins from GoodEmailCode](https://www.goodemailcode.com/){:target="_blank"}{:rel="noopener noreferrer"} for helping with that.
+AOL and Yahoo don't support the '/' in the border-radius, so the style must be split into individual parts. Thanks to [Mark Robbins](https://twitter.com/M_J_Robbins){:target="_blank"}{:rel="noopener noreferrer"} for helping with that.
 
 ```html
 <!--[if !mso]-->
