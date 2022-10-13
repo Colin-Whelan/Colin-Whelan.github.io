@@ -98,7 +98,7 @@ With Organic Shapes, content is layered on top of these shapes rather than the s
 
 ## Basic Shapes
 
-Design shapes using the 8 point full control tool from 9elements then copy and paste the values into [my VML pather tool](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}.
+Design shapes using the [8 point full control tool](https://9elements.github.io/fancy-border-radius/full-control.html){:target="_blank"}{:rel="noopener noreferrer"} from 9elements then copy and paste the values into [my VML pather tool](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}.
 
 HTML
 
