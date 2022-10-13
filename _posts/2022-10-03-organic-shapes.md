@@ -39,28 +39,45 @@ I especially like the somewhat hand-drawn style seen above.
 
 # Where is this supported?
 
-## Webmails and Mobile
+## Webmails
 
-There is full support everywhere except AOL and Yahoo where the '/' in the border radius is not supported - showing a square shape instead. A simpler fallback shape can be added really easily thanks to a bug in AOL/Yahoo where it will ignore CSS in a class if there is a CSS comment direcly before it. Using this bug, the full shape can be ignored on AOL/Yahoo while leaving behind a shape that only uses 4 values.
+There is full support in all webmails and mobile. 
+AOL and Yahoo don't support the '/' in the border-radius, so the style must be split into individual parts. Thanks to [Mark Robbins from GoodEmailCode](https://www.goodemailcode.com/){:target="_blank"}{:rel="noopener noreferrer"} for helping with that.
 
 ```html
 <!--[if !mso]-->
 <style type="text/css">
   .bg_8A39FF { background-color:#8A39FF; }
-  .shape { border-radius: 45% 45% 40% 55%; }
-  /*yahoo ignores this next class*/
   .shape { border-radius: 10% 20% 30% 20% / 45% 45% 40% 55%; }
 </style>
 <!--<![endif]-->
 ```
 
-For mobile and darkmode, other classes can be used like normal to modify the shapes and colors as needed.
+Is equivalent to:
+
+```html
+<!--[if !mso]-->
+<style type="text/css">
+  .bg_8A39FF { background-color:#8A39FF; }
+  .shape { 
+    border-top-left-radius: 10% 45%; 
+    border-top-right-radius: 20% 45%; 
+    border-bottom-right-radius: 30% 40%; 
+    border-bottom-left-radius: 20% 55%;
+  }
+</style>
+<!--<![endif]-->
+```
+
+## Mobile and Darkmode
+
+There is full support for mobile and darkmode. Classes are used like normal to modify the shapes and colors as needed.
 
 ## Outlook Support!
 
-Surprisingly, Outlook can be supported too, with the use of some novel VML code...
+Surprisingly, Outlook is supported too - with the use of some novel VML code...
 
-I've developed a tool to automatically create the VML as doing it manually is very time consuming and confusing. [Check out my VML Pather tool for various VML generation needs.](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}
+VML is the Outlook equivalent of SVG where shapes are drawn with paths using coordinates. I've developed a tool to automatically create the VML as doing it manually is very time consuming and confusing. [Check out my VML Pather tool the generate these Organic Shapes.](https://vml-pather.glitch.me/){:target="_blank"}{:rel="noopener noreferrer"}
 
 # How Does It Work?
 
@@ -116,7 +133,10 @@ CSS
 
 ```css
 .fullshape1 {
-border-radius: 15% 77% 70% 17% / 71% 39% 48% 18% !important;
+border-top-left-radius: 15% 71%; 
+border-top-right-radius: 77% 39%; 
+border-bottom-right-radius: 70% 48%; 
+border-bottom-left-radius: 17% 18%; 
 }
 .bg_D2ECEB { background-color: #D2ECEB; }
 ```
@@ -194,13 +214,22 @@ CSS
 
 ```css
 .fullshape1 {
-border-radius: 15% 77% 70% 17% / 71% 39% 48% 18% !important;
+border-top-left-radius: 15% 71%; 
+border-top-right-radius: 77% 39%; 
+border-bottom-right-radius: 70% 48%; 
+border-bottom-left-radius: 17% 18%;
 }
 .fullshape2 {
-border-radius: 51% 33% 32% 24% / 30% 58% 33% 30%  !important;
+border-top-left-radius: 51% 30%; 
+border-top-right-radius: 33% 58%; 
+border-bottom-right-radius: 32% 33%; 
+border-bottom-left-radius: 24% 30%; 
 }
 .outline2 {
-border-radius: 65% 41% 31% 16% / 41% 41% 51% 31% !important;
+border-top-left-radius: 65% 41%; 
+border-top-right-radius: 41% 41%; 
+border-bottom-right-radius: 31% 51%; 
+border-bottom-left-radius: 16% 31%; 
 border: 1px solid black !important;
 mso-border-alt: none !important;
 }
